@@ -172,6 +172,7 @@ def team_names
 end
 
   def player_numbers(team_name)
+    binding.pry
     numbs = []
     game_hash.collect do |team, stats|
       if stats[:team_name] == team_name
