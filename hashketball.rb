@@ -185,12 +185,11 @@ def player_numbers(team_name)
 
 end
 
-def player_stats(player_name)
-  playerdata = {}
+def player_stats(name)
   game_hash.each do |key, value|
   value[:players].each do |player_name|
     if name == player_name[:player_name]
-    hash_of_players_stats << :player_name.delete(:player_name)
+    playerdata << :player_name.delete(:player_name)
     end
     end
     end
