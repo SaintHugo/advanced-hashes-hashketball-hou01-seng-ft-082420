@@ -193,7 +193,5 @@ def player_stats(player_name)
         playerdata << :player_name(:player_name)
       end
     end
-  end
-   end
    playerdata
   end
