@@ -195,8 +195,13 @@ def player_stats(name)
   end
 
     def big_shoe_rebounds
-        big_shoe_player = player_stats.max_by do |player_name, player_data|
-            player_data[:shoe]
-        end
-        rebounds = big_shoe_player[1][:rebounds]
-    end
+      hash = game_hash()  #access the main data
+all_player_data = hash[:home][:players] + hash[:away][:players]   #Combine (concat) the two arrays hashes of players into one array of hashes to make it easier to compare
+#loop through with max, look to see which :shoe is bigger, based on 1, 0, -1, max returns the _hash_ of the largest shoe, not just the largest shoe
+player_with_largest_shoe = all_player_data.max do |first_player, second_player|
+ first_player[:shoe] <=> second_player[:shoe]
+end
+player_with_largest_shoe[:rebounds]  #return the number of rebounds of the player with largest shoe size
+players_as_an_array
+end #end big_shoe_rebounds()
+
