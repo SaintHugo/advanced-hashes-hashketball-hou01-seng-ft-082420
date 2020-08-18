@@ -157,7 +157,7 @@ end
 def team_colors(team_name)
   colors = ""
 
-  game_hash.collect do |team, stats|
+  game_hash.each do |team, stats|
     if stats[:team_name] == team_name
       colors = stats[:colors]
     end
@@ -166,16 +166,16 @@ colors
 end
 
 def team_names
-  game_hash.collect do |team, stats|
+  game_hash.each do |team, stats|
     stats[:team_name]
   end
 end
 
   def player_numbers(team_name)
     jersey_numbers = []
-    game_hash.collect do |team, stats|
+    game_hash.each do |team, stats|
       if stats[:team_name] == team_name
-        stats[:players].collect do |player, data|
+        stats[:players].each do |player, data|
           jersey_numbers.push(player[:number])
         end
       end
@@ -198,11 +198,11 @@ def player_stats(name)
     playerrebound = nil
     numbers = []
     biggest_shoesize = nil
-        game_hash.collect do |team, stats|
-          stats[:players].collect do |player, data|
+        game_hash.each do |team, stats|
+          stats[:players].each do |player, data|
             numbers.push(data[:shoe])
             biggest_shoesize = numbers.sort[-1]
-               data.collect do |category, stat|
+               data.each do |category, stat|
                  if category == :shoe
                   if stat == biggest_shoesize
                     playerrebound =  data[:rebounds]
