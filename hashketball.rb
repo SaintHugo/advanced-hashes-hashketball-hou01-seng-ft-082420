@@ -180,8 +180,9 @@ def player_numbers(team_name)
         number.push(data[:number])
       end
     end
+    number
   end
-number
+
 end
 
 def player_stats(player_name)
