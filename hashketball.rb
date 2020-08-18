@@ -200,11 +200,11 @@ def big_shoe_rebounds
       data.collect do |category, stat|
         if category == :shoe
           if stat == biggest_shoesize
-            playerrebound =  data[:rebounds]
+            return data[:rebounds]
             end
           end
         end
     end
   end
-  playerrebound
+
      end
