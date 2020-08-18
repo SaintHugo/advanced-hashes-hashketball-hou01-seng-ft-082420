@@ -171,18 +171,21 @@ def team_names
   end
 end
 
-def player_numbers(team_name)
-  number = []
-
-  game_hash.collect do |team, stats|
-    if stats[:team_name] == team_name
-      stats[:players].collect do |player, data|
-        number.push(data[:number])
-      end
-    end
-    number
-  end
-
+  def player_numbers(team_lookup)
+   jersey_numbers = []
+   game_hash.each do |team, team_info|
+     if team_lookup == team_info[:team_name]
+       team_info.each do |key, value|
+         binding.pry
+         if key == :players
+           value.each do |numbers|
+             jersey_numbers.push()
+ end
+ end
+ end
+ end
+ end
+ end
 end
 
 def player_stats(name)
