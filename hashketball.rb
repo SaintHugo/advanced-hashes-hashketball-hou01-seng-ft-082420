@@ -194,5 +194,5 @@ def player_stats(name)
     end
     end
     end
-    hash_of_players_stats
+    playerdatat
   end
