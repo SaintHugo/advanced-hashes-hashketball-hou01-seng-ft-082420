@@ -180,6 +180,7 @@ end
         end
       end
     end
+    binding.pry
   numbs
   end
 
