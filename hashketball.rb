@@ -177,7 +177,7 @@ end
        team_info.each do |key, value|
          if key == :players
            value.each do |numbers|
-             return numbers
+             return numbers[2]
  end
  end
  end
