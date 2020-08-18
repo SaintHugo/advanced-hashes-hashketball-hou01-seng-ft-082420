@@ -177,10 +177,11 @@ end
       if stats[:team_name] == team_name
         stats[:players].collect do |player, data|
           numbs.push(data[:number])
+          binding.pry
         end
       end
     end
-    binding.pry
+    
   numbs
   end
 
