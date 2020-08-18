@@ -186,10 +186,10 @@ def player_numbers(team_name)
 end
 
 def player_stats(player_name)
-  playerdata = []
+  playerdata = {}
    game_hash.collect do |team, stats|
     stats[:players].collect do |player, data|
-      if player == player_name
+      if player == player_name[:player_name]
         playerdata = data
       end
     end
