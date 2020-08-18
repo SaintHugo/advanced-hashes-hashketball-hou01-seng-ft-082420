@@ -171,7 +171,7 @@ def team_names
   end
 end
 
-  def player_numbers(team_lookup)
+  def player_numbers(team_name)
     numbs = []
     game_hash.collect do |team, stats|
       if stats[:team_name] == team_name
