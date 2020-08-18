@@ -178,7 +178,7 @@ end
        team_info.each do |key, value|
          if key == :players
            value.each do |numbers|
-             jersey_numbers.push()
+             return numbers
  end
  end
  end
