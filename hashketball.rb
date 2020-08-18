@@ -172,18 +172,17 @@ def team_names
 end
 
   def player_numbers(team_lookup)
-   game_hash.each do |team, team_info|
-     if team_lookup == team_info[:team_name]
-       team_info.each do |key, value|
-         if key == :players
-           value.each do |numbers|
-             return numbers[2]
- end
- end
- end
- end
- end
- end
+    numbs = [] 
+    game_hash.collect do |team, stats|
+      if stats[:team_name] == team_name
+        stats[:players].collect do |player, data|
+          numbs.push(data[:number])
+        end 
+      end 
+    end 
+  numbs
+  end 
+
 
 def player_stats(name)
   game_hash.each do |key, value|
