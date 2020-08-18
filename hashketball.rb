@@ -176,12 +176,11 @@ end
     game_hash.collect do |team, stats|
       if stats[:team_name] == team_name
         stats[:players].collect do |player, data|
-          numbs.push(data[:number])
-          binding.pry
+          numbs.push(player[:number])
         end
       end
     end
-
+    
   numbs
   end
 
