@@ -186,7 +186,7 @@ def player_numbers(team_name)
 end
 
 def player_stats(player_name)
-  playerdata = {}
+  playerdata = Hash.new
    game_hash.collect do |team, stats|
     stats[:players].collect do |player, data|
 
