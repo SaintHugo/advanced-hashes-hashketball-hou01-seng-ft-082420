@@ -188,9 +188,9 @@ end
 def player_stats(player_name)
   playerdata = []
    game_hash.collect do |team, stats|
-    stats[:players].collect do |player, stat|
+    stats[:players].collect do |player, data|
       if player == player_name
-        playerdata << stat
+        playerdata << data
       end
     end
     binding.pry
