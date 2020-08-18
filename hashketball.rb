@@ -189,11 +189,10 @@ def player_stats(player_name)
   playerdata = Hash.new
    game_hash.collect do |team, stats|
     stats[:players].collect do |player, data|
-
       if player == player_name
         playerdata << data
       end
     end
-    playerdata
    end
+   playerdata
   end
